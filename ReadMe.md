@@ -1,5 +1,5 @@
 # Squrriels with Ties
-https://ecomagmn.azurewebsites.net/
+https://squirrelswithties.azurewebsites.net/
 
 Create a E-Commerce Website built using sprints and agile programming. ASP.NET core was used as a framework for building out the application
 
@@ -34,6 +34,8 @@ was checked out.
 
 ## Getting Started
 Go to the Website
+
+To see source code, Fork and clone this repo to Visual Studio. 
 
 # Authors
 Anthony Green
