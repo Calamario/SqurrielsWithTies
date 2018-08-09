@@ -152,8 +152,8 @@ namespace ecommerce.Controllers
             await _emailSender.SendEmailAsync(user.Email, "Your Recent Purchase", sb.ToString());
 
 
-            CompleteBasket(cvm, user);
-            MakeNewBasket(user);
+            await CompleteBasket(cvm, user);
+            await MakeNewBasket(user);
 
             return View(cvm);
         }
@@ -163,25 +163,25 @@ namespace ecommerce.Controllers
         /// </summary>
         /// <param name="cvm"> CheckoutViewModel </param>
         /// <param name="user">the current user</param>
-        public void CompleteBasket(CheckoutViewModel cvm, ApplicationUser user)
+        public async Task CompleteBasket(CheckoutViewModel cvm, ApplicationUser user)
         {
-            Basket basket = _context.GetCurrentBasket(user.Id).Result;
+            Basket basket = await _context.GetCurrentBasketAsync(user.Id);
             basket.IsComplete = true;
-            _context.UpdateBasket(basket);
+            await _context.UpdateBasketAsync(basket);
         }
 
         /// <summary>
         /// Creates a new basket for the user
         /// </summary>
         /// <param name="user">the current user</param>
-        public void MakeNewBasket(ApplicationUser user)
+        public async Task MakeNewBasket(ApplicationUser user)
         {
             Basket newBasket = new Basket
             {
                 UserID = user.Id,
                 IsComplete = false
             };
-            _context.AddBasket(newBasket);
+            await _context.AddBasketAsync(newBasket);
         }
     }
 }

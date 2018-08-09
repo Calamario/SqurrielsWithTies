@@ -10,9 +10,9 @@ namespace ecommerce.Models.Interface
         Task<List<BasketItem>> GetAllBasketItem(string id);
         int GetBasketID(string id);
         void SaveOrder(Order order);
-        Task<Basket> GetCurrentBasket(string id);
-        void UpdateBasket(Basket basket);
-        void AddBasket(Basket basket);
+        Task<Basket> GetCurrentBasketAsync(string id);
+        Task UpdateBasketAsync(Basket basket);
+        Task AddBasketAsync(Basket basket);
         Task<Product> GetProduct(int id);
     }
 }

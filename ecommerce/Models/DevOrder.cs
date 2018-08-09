@@ -40,19 +40,18 @@ namespace ecommerce.Models
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Basket> GetCurrentBasket(string id)
+        public async Task<Basket> GetCurrentBasketAsync(string id)
         {
-            Basket basket = await _context.BasketTable.FirstOrDefaultAsync(b => b.UserID == id && b.IsComplete == false);
-            return basket;
+            return await _context.BasketTable.FirstOrDefaultAsync(b => b.UserID == id && b.IsComplete == false);
         }
 
-        public async void UpdateBasket(Basket basket)
+        public async Task UpdateBasketAsync(Basket basket)
         {
             _context.BasketTable.Update(basket);
             await _context.SaveChangesAsync();
         }
 
-        public async void AddBasket(Basket basket)
+        public async Task AddBasketAsync(Basket basket)
         {
             await _context.BasketTable.AddAsync(basket);
             await _context.SaveChangesAsync();
