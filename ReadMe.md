@@ -32,6 +32,22 @@ put into the basket and a BasketID to know which basket it was put inside of. On
 a Order is created with their shipping address, UserID to know which user checkedout, and BasketID to know which basket
 was checked out.
 
+
+## Wireframes
+Home Page
+![Home_Page](ecommerce/wwwroot/Assets/Index.PNG)
+Menu View
+![DB_Schema](ecommerce/wwwroot/Assets/withMenu.PNG)
+Products
+![DB_Schema](ecommerce/wwwroot/Assets/Product.PNG)
+Details
+![DB_Schema](ecommerce/wwwroot/Assets/details.PNG)
+Basket View
+![DB_Schema](ecommerce/wwwroot/Assets/Basket.PNG)
+Login
+![DB_Schema](ecommerce/wwwroot/Assets/Login.PNG)
+
+
 ## Getting Started
 Go to the Website
 
